@@ -1,0 +1,28 @@
+name: crisisops-env
+version: 1.0.0
+description: Emergency response coordination environment
+
+entrypoint: app.main:app
+
+api:
+  reset: /reset
+  step: /step
+  state: /state
+
+tasks:
+  - id: easy_dispatch
+    difficulty: easy
+    description: Handle one emergency
+
+  - id: medium_priority
+    difficulty: medium
+    description: Handle multiple incidents
+
+  - id: hard_surge
+    difficulty: hard
+    description: Handle citywide surge
+
+models:
+  action: ActionInput
+  state: EnvState
+  step_response: StepResponse
